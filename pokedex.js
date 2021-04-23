@@ -1,12 +1,5 @@
-// documentation of discord.js
-// https://discordjs.guide/command-handling/#individual-command-files
-
-// documentation of pokeAPI 
-// https://pokeapi.co/docs/v2
-
-import { Client } from "discord.js";
-const client = new Client()
-const whitelisted_users = ["hart", "test"]
+const Discord = require('discord.js');
+const client = new Discord.Client();
 import fetch from "node-fetch";
 
 let dex = []
@@ -14,7 +7,6 @@ let dex = []
 // DELETE BEFORE PUSHING
 TOKEN = "ODI5NTAzMTYyNzMzMjk3Njc0.YG5FBQ.6QChr2P-J68HwRXvQeAC-OBHN5Q"
 client.login(TOKEN)
-//
 
 async function fetchDex(id) { 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
@@ -38,7 +30,7 @@ client.on("ready", () => {
 
 client.on("message", msg => {
         if (whitelisted_users.includes(msg.author.username) && msg.content > 0 && msg.content < 152) {
-            msg.reply(`call that ${dex[msg.content - 1].name.charAt(0).toUpperCase() + dex[msg.content - 1].name.slice(1)} (ID: ${dex[msg.content - 1].id})`)
-            
+             msg.reply(`call that ${dex[msg.content - 1].name.charAt(0).toUpperCase() + dex[msg.content - 1].name.slice(1)} (ID: ${dex[msg.content - 1].id})`)
         }
+        msg.react("817517997890469900")
 })
