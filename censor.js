@@ -18,6 +18,6 @@ client.on("message", (msg) => {
   }
 });
 
-// test token - not to be used in prod
-TOKEN = "ODI5NTAzMTYyNzMzMjk3Njc0.YG5FBQ.6QChr2P-J68HwRXvQeAC-OBHN5Q";
+// must enter valid token
+TOKEN = "";
 client.login(TOKEN);
